@@ -1,67 +1,63 @@
-# GridFluidSim3d
-
-This program is an implementation of a PIC/FLIP liquid fluid simulation written in C++11 based on methods described in Robert Bridson's "Fluid Simulation for Computer Graphics" textbook. The fluid simulation program outputs the surface of the fluid as a sequence of triangle meshes stored in the Stanford .PLY file format which can then be imported into your renderer of choice.
-
-Visit [http://rlguy.com/gridfluidsim/](http://rlguy.com/gridfluidsim/) for more information about the program.
-
-## Gallery
-
-The following screencaps are of animations that were simulated within the program and rendered using [Blender](http://www.blender.org). Animations created with the fluid simulation program can be viewed on [YouTube](https://www.youtube.com/rlguyportfolio).
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/fluid_text-github.jpg)](http://rlguy.com/gridfluidsim/images/fluid_text.jpg)
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/bunny-github.jpg)](http://rlguy.com/gridfluidsim/images/bunny.jpg) [![alt tag](http://rlguy.com/gridfluidsim/images/splash-github.jpg)](http://rlguy.com/gridfluidsim/images/splash.jpg)
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/diffuse-github.jpg)](http://rlguy.com/gridfluidsim/images/diffuse.jpg) [![alt tag](http://rlguy.com/gridfluidsim/images/diffuse_inflow-github.jpg)](http://rlguy.com/gridfluidsim/images/diffuse_inflow.jpg)
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/diffuse_particles-github.jpg)](http://rlguy.com/gridfluidsim/images/diffuse_particles.jpg) [![alt tag](http://rlguy.com/gridfluidsim/images/river_rapids-github.jpg)](http://rlguy.com/gridfluidsim/images/river_rapids.jpg)
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/lego_river-github.jpg)](http://rlguy.com/gridfluidsim/images/lego_river.jpg) [![alt tag](http://rlguy.com/gridfluidsim/images/lego_sphere-github.jpg)](http://rlguy.com/gridfluidsim/images/lego_sphere.jpg)
-
-[![alt tag](http://rlguy.com/gridfluidsim/images/orbit-github.jpg)](http://rlguy.com/gridfluidsim/images/orbit.jpg) [![alt tag](http://rlguy.com/gridfluidsim/images/warped_gravity-github.jpg)](http://rlguy.com/gridfluidsim/images/warped_gravity.jpg)
-
-## Features
-Below is a list of features implemented in the simulator.
-
-* Isotropic and anisotropic particle to mesh conversion
-* Spray, bubble, and foam particle simulation
-* 'LEGO' brick surface reconstruction
-* Save and load state of a simulation
-* GPU accelerated fourth-order Runge-Kutta integration using OpenCL
-* GPU accelerated velocity advection using OpenCL
-* Python bindings
-
-## Dependencies
-
-There are three dependencies that are required to build this program:
-
-1. OpenCL headers (can be found at [khronos.org](https://www.khronos.org/registry/cl/))
-2. An OpenCL SDK specific to your GPU vender (AMD, NVIDIA, Intel, etc.)
-3. A compiler that supports C++11
-
-## Installation
-
-This program uses the [CMake](https://cmake.org/) utility to generate the appropriate solution, project, or Makefiles for your system. The following commands can be executed in the root directory of the project to generate a build system for your machine:
-
-```
-mkdir build && cd build
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-gridfluidsim3d" class="anchor" aria-hidden="true" tabindex="-1" href="#gridfluidsim3d"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">网格流体Sim3d</font></font></h1>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该程序是基于 Robert Bridson 的“计算机图形流体模拟”教科书中描述的方法用 C++11 编写的 PIC/FLIP 液体流体模拟的实现。流体模拟程序将流体表面输出为以斯坦福 .PLY 文件格式存储的一系列三角形网格，然后可以将其导入到您选择的渲染器中。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关该计划的更多信息，</font><font style="vertical-align: inherit;">请访问</font></font><a href="http://rlguy.com/gridfluidsim/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">http://rlguy.com/gridfluidsim/ 。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-gallery" class="anchor" aria-hidden="true" tabindex="-1" href="#gallery"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">画廊</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下屏幕截图是在程序中模拟并使用</font></font><a href="http://www.blender.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blender</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">渲染的动画。使用流体模拟程序创建的动画可以在</font></font><a href="https://www.youtube.com/rlguyportfolio" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">YouTube</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上观看</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/fluid_text.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/fb94f5c9fe796ff58d08525172b2be18884ef534c8ef677459966d74c91a207d/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f666c7569645f746578742d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/fluid_text-github.jpg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/bunny.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/801dc3493af8d547b11a705f42b799aea3359239a4484789a5752761003b218d/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f62756e6e792d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/bunny-github.jpg" style="max-width: 100%;"></a> <a href="http://rlguy.com/gridfluidsim/images/splash.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/91ce781d86ed643cd1a5392c2dd535bd9033a77a720d71a8046d213f958195e5/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f73706c6173682d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/splash-github.jpg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/diffuse.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/edcf72ad205c4688a612e555945b434f5a5d58020d6cea9c1c8d4770a36a4449/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f646966667573652d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/diffuse-github.jpg" style="max-width: 100%;"></a> <a href="http://rlguy.com/gridfluidsim/images/diffuse_inflow.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/65f2fe25d84b5e2b2cca9ce664be11710d3b80cfebf937f0470a8899325613a0/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f646966667573655f696e666c6f772d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/diffuse_inflow-github.jpg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/diffuse_particles.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/351b89ae4fb79924ed2f1d04110541c780fdd512011e62471c1e9882ff6b3482/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f646966667573655f7061727469636c65732d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/diffuse_particles-github.jpg" style="max-width: 100%;"></a> <a href="http://rlguy.com/gridfluidsim/images/river_rapids.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/d455bc1c4b798cde272813bdd9b62938e4a04231105f0a000d8c84b4ffb5d220/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f72697665725f7261706964732d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/river_rapids-github.jpg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/lego_river.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/2acba1cbb6ee9853c288e03cc5ecfad9d5778458e899337843c07434a96dc764/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f6c65676f5f72697665722d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/lego_river-github.jpg" style="max-width: 100%;"></a> <a href="http://rlguy.com/gridfluidsim/images/lego_sphere.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/865655923ef3f05bd723d67c3c27fbb446a712ae6386dd0bfe6071b634692f42/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f6c65676f5f7370686572652d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/lego_sphere-github.jpg" style="max-width: 100%;"></a></p>
+<p dir="auto"><a href="http://rlguy.com/gridfluidsim/images/orbit.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/5e7edbae58130e6afdbe10d47892d691250deef52cfb40b0653e2256e59e8c58/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f6f726269742d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/orbit-github.jpg" style="max-width: 100%;"></a> <a href="http://rlguy.com/gridfluidsim/images/warped_gravity.jpg" rel="nofollow"><img src="https://camo.githubusercontent.com/ed8e5f8fe4161b6802b32f0d0ba12dd3e507e70eff26819ebe7f2bd6ec056cb5/687474703a2f2f726c6775792e636f6d2f67726964666c75696473696d2f696d616765732f7761727065645f677261766974792d6769746875622e6a7067" alt="替代标签" data-canonical-src="http://rlguy.com/gridfluidsim/images/warped_gravity-github.jpg" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下是模拟器中实现的功能列表。</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">各向同性和各向异性粒子到网格的转换</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">喷雾、气泡和泡沫粒子模拟</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">“乐高”砖表面重建</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">保存和加载模拟状态</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 OpenCL GPU 加速四阶 Runge-Kutta 集成</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用 OpenCL 的 GPU 加速速度平流</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Python 绑定</font></font></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-dependencies" class="anchor" aria-hidden="true" tabindex="-1" href="#dependencies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">依赖关系</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建此程序需要三个依赖项：</font></font></p>
+<ol dir="auto">
+<li><font style="vertical-align: inherit;"></font><a href="https://www.khronos.org/registry/cl/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OpenCL 标头（可以在khronos.org</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">找到</font><font style="vertical-align: inherit;">）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特定于您的 GPU 供应商（AMD、NVIDIA、Intel 等）的 OpenCL SDK</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持C++11的编译器</font></font></li>
+</ol>
+<h2 tabindex="-1" dir="auto"><a id="user-content-installation" class="anchor" aria-hidden="true" tabindex="-1" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该程序使用</font></font><a href="https://cmake.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">CMake</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实用程序为您的系统生成适当的解决方案、项目或 Makefile。可以在项目的根目录中执行以下命令来为您的机器生成构建系统：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>mkdir build &amp;&amp; cd build
 cmake ..
-```
-
-The first line creates a new directory named ```build``` and changes the working directory to the newly created build directory. The second line runs the CMake utility and passes it the parent directory which contains the ```CMakeLists.txt``` file.
-
-The type of build system generated by CMake can be specified with the ```-G [generator]``` parameter. For example:
-
-```
-cmake .. -G "MinGW Makefiles"
-```
-
-will generate Makefiles for the MinGW compiler which can then be built using the [GNU Make](https://www.gnu.org/software/make/) utility with the command ```make```. A list of CMake generators can be found [here](https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html).
-
-Once successfully built, the program will be located in the ```build/fluidsim/``` directory with the following directory structure:
-
-```
-fluidsim
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="mkdir build &amp;&amp; cd build
+cmake .." tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第一行创建一个名为 的新目录</font></font><code>build</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，并将工作目录更改为新创建的构建目录。第二行运行 CMake 实用程序并将其传递给包含该</font></font><code>CMakeLists.txt</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件的父目录。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以使用该参数指定CMake生成的构建系统的类型</font></font><code>-G [generator]</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。例如：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>cmake .. -G "MinGW Makefiles"
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="cmake .. -G &quot;MinGW Makefiles&quot;" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将为 MinGW 编译器生成 Makefile，然后可以使用</font></font><a href="https://www.gnu.org/software/make/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GNU Make</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">实用程序和命令来构建该文件</font></font><code>make</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。可以</font></font><a href="https://cmake.org/cmake/help/v3.0/manual/cmake-generators.7.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在此处</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">找到 CMake 生成器的列表</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建成功后，程序将位于</font></font><code>build/fluidsim/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">具有以下目录结构的目录中：</font></font></p>
+<div class="snippet-clipboard-content notranslate position-relative overflow-auto"><pre class="notranslate"><code>fluidsim
 │   fluidsim.a      - Runs program configured in main.cpp     
 │
 └───output          - Stores data output by the simulation program
@@ -73,94 +69,148 @@ fluidsim
 └───pyfluid         - The pyfluid Python package
     └───examples        - pyfluid example usage
     └───lib             - C++ library files
-```
-
-## Configuring the Fluid Simulator
-
-The fluid simulator can be configured by manipulating a FluidSimulation object in the function ```main()``` located in the file [src/main.cpp](src/main.cpp). After building the project, the fluid simulation exectuable will be located in the ```fluidsim/``` directory. Example configurations are located in the [src/examples/cpp/](src/examples/cpp) directory. Some documentation on the public methods for the FluidSimulation class is provided in the [fluidsimulation.h](src/fluidsimulation.h) header.
-
-A fluid simulation can also be configured and run within a Python script by importing the ```pyfluid``` package, which will be located in the ```fluidsim/``` directory after building the project. Example scripts are located in the [src/examples/python/](src/examples/python) directory.
-
-The following two sections will demonstrate how to program a simple "Hello World" simulation using either C++ or Python.
-
-### Hello World (C++)
-
-This is a very basic example of how to use the FluidSimulation class to run a simulation. The simulation in this example will drop a ball of fluid in the center of a cube shaped fluid domain. This example is relatively quick to compute and can be used to test if the simulation program is running correctly.
-
-The fluid simulator performs its computations on a 3D grid, and because of this the simulation domain is shaped like a rectangular prism. The FluidSimulation class can be initialized with four parameters: the number of grid cells in each direction x, y, and z, and the width of a grid cell.
-
-```c++
-int xsize = 32;
+</code></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="fluidsim
+│   fluidsim.a      - Runs program configured in main.cpp     
+│
+└───output          - Stores data output by the simulation program
+│   └───bakefiles       - meshes
+│   └───logs            - logfiles
+│   └───savestates      - simulation save states
+│   └───temp            - temporary files created by the simulation program
+│    
+└───pyfluid         - The pyfluid Python package
+    └───examples        - pyfluid example usage
+    └───lib             - C++ library files" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<h2 tabindex="-1" dir="auto"><a id="user-content-configuring-the-fluid-simulator" class="anchor" aria-hidden="true" tabindex="-1" href="#configuring-the-fluid-simulator"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配置流体模拟器</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>main()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可以通过操作位于文件</font></font><a href="/rlguy/GridFluidSim3D/blob/master/src/main.cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">src/main.cpp</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的函数中的 FluidSimulation 对象来配置流体模拟器</font><font style="vertical-align: inherit;">。构建项目后，流体模拟可执行文件将位于该</font></font><code>fluidsim/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录中。示例配置位于</font></font><a href="/rlguy/GridFluidSim3D/blob/master/src/examples/cpp"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">src/examples/cpp/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录中。</font></font><a href="/rlguy/GridFluidSim3D/blob/master/src/fluidsimulation.h"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FluidSimulation.h</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">标头中提供了有关 FluidSimulation 类的公共方法的一些文档</font><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">还可以通过导入包在 Python 脚本中配置和运行流体模拟</font></font><code>pyfluid</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，该包将位于</font></font><code>fluidsim/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">构建项目后的目录中。示例脚本位于</font></font><a href="/rlguy/GridFluidSim3D/blob/master/src/examples/python"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">src/examples/python/</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录中。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下两节将演示如何使用 C++ 或 Python 编写简单的“Hello World”模拟。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-hello-world-c" class="anchor" aria-hidden="true" tabindex="-1" href="#hello-world-c"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">你好世界（C++）</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这是如何使用 FluidSimulation 类运行模拟的非常基本的示例。本例中的模拟将在立方体形状的流体域的中心放置一个流体球。该示例计算速度相对较快，可以用来测试仿真程序是否正确运行。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">流体模拟器在 3D 网格上执行计算，因此模拟域的形状像矩形棱柱。 FluidSimulation 类可以使用四个参数进行初始化：每个方向 x、y 和 z 上的网格单元数以及网格单元的宽度。</font></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">int</span> xsize = <span class="pl-c1">32</span>;
+<span class="pl-k">int</span> ysize = <span class="pl-c1">32</span>;
+<span class="pl-k">int</span> zsize = <span class="pl-c1">32</span>;
+<span class="pl-k">double</span> cellsize = <span class="pl-c1">0.25</span>;
+FluidSimulation <span class="pl-en">fluidsim</span>(xsize, ysize, zsize, cellsize);</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="int xsize = 32;
 int ysize = 32;
 int zsize = 32;
 double cellsize = 0.25;
-FluidSimulation fluidsim(xsize, ysize, zsize, cellsize);
-```
-
-We want to add a ball of fluid to the center of the fluid domain, so we will need to get the dimensions of the domain by calling `getSimulationDimensions` and passing it pointers to store the width, height, and depth values. Alternatively, the dimensions can be calculated by multiplying the cell width by the corresponding number of cells in a direction (e.g. `width = dx*isize`).
-
-```c++
-double width, height, depth;
-fluidsim.getSimulationDimensions(&width, &height, &depth);
-```
-
-Now that we have the dimensions of the simulation domain, we can calculate the center, and add a ball of fluid by calling `addImplicitFluidPoint` which takes the x, y, and z position and radius as parameters. 
-
-```c++
-double centerx = width / 2;
+FluidSimulation fluidsim(xsize, ysize, zsize, cellsize);" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们想要将一个流体球添加到流体域的中心，因此我们需要通过调用</font></font><code>getSimulationDimensions</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并传递指针来存储宽度、高度和深度值来获取流体域的尺寸。或者，可以通过将单元宽度乘以某个方向上相应的单元数量来计算尺寸（例如</font></font><code>width = dx*isize</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）。</font></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">double</span> width, height, depth;
+fluidsim.getSimulationDimensions(&amp;width, &amp;height, &amp;depth);</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="double width, height, depth;
+fluidsim.getSimulationDimensions(&amp;width, &amp;height, &amp;depth);" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现在我们已经有了模拟域的尺寸，我们可以计算中心，并通过调用</font></font><code>addImplicitFluidPoint</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以 x、y、z 位置和半径为参数的函数来添加流体球。</font></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">double</span> centerx = width / <span class="pl-c1">2</span>;
+<span class="pl-k">double</span> centery = height / <span class="pl-c1">2</span>;
+<span class="pl-k">double</span> centerz = depth / <span class="pl-c1">2</span>;
+<span class="pl-k">double</span> radius = <span class="pl-c1">6.0</span>;
+fluidsim.addImplicitFluidPoint(centerx, centery, centerz, radius);</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="double centerx = width / 2;
 double centery = height / 2;
 double centerz = depth / 2;
 double radius = 6.0;
-fluidsim.addImplicitFluidPoint(centerx, centery, centerz, radius);
-```
-
-An important note to make about `addImplicitFluidPoint` is that it will not add a sphere with the specified radius, it will add a sphere with half of the specified radius. An implicit fluid point is represented as a field of values on the simulation grid. The strength of the field values are 1 at the point center and falls off towards 0 as distance from the point increases. When the simulation is initialized, fluid particles will be created in regions where the field values are greater than `0.5`. This means that if you add a fluid point with a radius of `6.0`, the ball of fluid in the simulation will actually be of radius `3.0` since field values will be less than `0.5` at a distance greater than half of the specified radius.
-
-The FluidSimulation object now has a domain containing some fluid, but the current simulation will not be very interesting as there are no forces acting upon the fluid. We can add the force of gravity by making a call to `addBodyForce` which takes three values representing a force vector as parameters. We will set the force of gravity to point downwards with a value of `25.0`.
-
-```c++
-double gx = 0.0;
+fluidsim.addImplicitFluidPoint(centerx, centery, centerz, radius);" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">需要注意的一个重要事项</font></font><code>addImplicitFluidPoint</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是，它不会添加指定半径的球体，而是添加指定半径一半的球体。隐式流体点表示为模拟网格上的值域。点中心的场强值为 1，随着距该点距离的增加，场强值逐渐趋于 0。初始化模拟时，将在场值大于 的区域中创建流体粒子</font></font><code>0.5</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。这意味着，如果添加半径为 的流体点</font></font><code>6.0</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，则模拟中的流体球实际上将具有半径</font></font><code>3.0</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，因为</font></font><code>0.5</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在大于指定半径一半的距离处，场值将小于 。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">FluidSimulation 对象现在有一个包含一些流体的域，但当前的模拟不会很有趣，因为没有力作用在流体上。我们可以通过调用</font></font><code>addBodyForce</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以代表力矢量的三个值作为参数来</font><font style="vertical-align: inherit;">添加重力。</font><font style="vertical-align: inherit;">我们将重力设置为向下，值为</font></font><code>25.0</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">double</span> gx = <span class="pl-c1">0.0</span>;
+<span class="pl-k">double</span> gy = -<span class="pl-c1">25.0</span>;
+<span class="pl-k">double</span> gz = <span class="pl-c1">0.0</span>;
+fluidsim.addBodyForce(gx, gy, gz);</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="double gx = 0.0;
 double gy = -25.0;
 double gz = 0.0;
-fluidsim.addBodyForce(gx, gy, gz);
-```
-
-Now we have a simulation domain with some fluid, and a force acting on the fluid. Before we run the simulation, a call to `initialize` must be made. Note that any calls to `addImplicitFluidPoint ` must be made before `initialize` is called.
-
-```c++
-fluidsim.initialize();
-```
-
-We will now run the simulation for a total of 30 animation frames at a rate of 30 frames per second by repeatedly making calls to the `update` function. The `update` function advances the state of the simulation by a specified period of time. To update the simulation at a rate of 30 frames per second, each call to `update` will need to be supplied with a time value of `1.0/30.0.` Each call to update will generate a triangle mesh that represents the fluid surface. The mesh files will be saved in the ```output/bakefiles/``` directory as a numbered sequence of files stored in the Stanford .PLY file format.
-
-```c++
-double timestep = 1.0 / 30.0;
+fluidsim.addBodyForce(gx, gy, gz);" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现在我们有一个包含一些流体的模拟域，以及作用在流体上的力。在运行模拟之前，</font></font><code>initialize</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">必须调用 。请注意，任何调用都必须在</font><font style="vertical-align: inherit;">调用</font></font><code>addImplicitFluidPoint </code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">之前进行。</font></font><code>initialize</code><font style="vertical-align: inherit;"></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre>fluidsim.initialize();</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="fluidsim.initialize();" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">现在，我们将通过重复调用该函数，以每秒 30 帧的速率运行总共 30 个动画帧的模拟</font></font><code>update</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。该</font></font><code>update</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">函数将模拟状态推进指定的时间段。要以每秒 30 帧的速率更新模拟，每次调用都</font></font><code>update</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">需要提供一个时间值。</font></font><code>1.0/30.0.</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">每次调用 update 都会生成一个表示流体表面的三角形网格。网格文件将</font></font><code>output/bakefiles/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">作为以斯坦福 .PLY 文件格式存储的文件编号序列</font><font style="vertical-align: inherit;">保存在目录中。</font></font></p>
+<div class="highlight highlight-source-c++ notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">double</span> timestep = <span class="pl-c1">1.0</span> / <span class="pl-c1">30.0</span>;
+<span class="pl-k">int</span> numframes = <span class="pl-c1">30</span>;
+<span class="pl-k">for</span> (<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; numframes; i++) {
+    fluidsim.<span class="pl-c1">update</span>(timestep);
+}</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="double timestep = 1.0 / 30.0;
 int numframes = 30;
 for (int i = 0; i < numframes; i++) {
     fluidsim.update(timestep);
-}
-```
+}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当此循环运行时，程序应将模拟统计数据和计时指标输出到终端。循环完成后，</font></font><code>output/bakefiles/</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">目录应包含 30 个 .PLY 三角形网格，编号从 0 到 29: </font></font><code>000000.ply, 000001.ply, 000002.ply, ..., 000028.ply, 000029.ply</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您</font></font><code>000029.ply</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 3D 建模包（例如</font></font><a href="http://www.blender.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Blender）</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中打开网格文件，则网格应该与</font></font><a href="http://rlguy.com/gridfluidsim/images/hello_world_frame30.jpg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此图像</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">类似。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本例中的流体模拟计算速度很快，但由于模拟网格的分辨率较低，质量较低。通过增加模拟尺寸同时减小单元尺寸可以提高模拟的质量。例如，尝试在像</font></font><code>64 x 64 x 64</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">元大小为 的分辨率网格上进行模拟</font></font><code>0.125</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，或者更好地在像</font></font><code>128 x 128 x 128</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">元大小为 的分辨率网格上进行模拟</font></font><code>0.0625</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-hello-world-python" class="anchor" aria-hidden="true" tabindex="-1" href="#hello-world-python"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">你好世界（Python）</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下 Python 脚本将运行上一节中描述的等效模拟。</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">from</span> <span class="pl-s1">pyfluid</span> <span class="pl-k">import</span> <span class="pl-v">FluidSimulation</span>
 
-As this loop runs, the program should output simulation stats and timing metrics to the terminal. After the loop completes, the ```output/bakefiles/``` directory should contain 30 .PLY triangle meshes numbered in sequence from 0 to 29: `000000.ply, 000001.ply, 000002.ply, ..., 000028.ply, 000029.ply`.
+<span class="pl-s1">fluidsim</span> <span class="pl-c1">=</span> <span class="pl-v">FluidSimulation</span>(<span class="pl-c1">32</span>, <span class="pl-c1">32</span>, <span class="pl-c1">32</span>, <span class="pl-c1">0.25</span>)
 
-If you open the `000029.ply` mesh file in a 3D modelling package such as [Blender](http://www.blender.org), the mesh should look similar to [this image](http://rlguy.com/gridfluidsim/images/hello_world_frame30.jpg).
+<span class="pl-s1">width</span>, <span class="pl-s1">height</span>, <span class="pl-s1">depth</span> <span class="pl-c1">=</span> <span class="pl-s1">fluidsim</span>.<span class="pl-en">get_simulation_dimensions</span>()
+<span class="pl-s1">fluidsim</span>.<span class="pl-en">add_implicit_fluid_point</span>(<span class="pl-s1">width</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span>, <span class="pl-s1">height</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span>, <span class="pl-s1">depth</span> <span class="pl-c1">/</span> <span class="pl-c1">2</span>, <span class="pl-c1">6.0</span>)
+<span class="pl-s1">fluidsim</span>.<span class="pl-en">add_body_force</span>(<span class="pl-c1">0.0</span>, <span class="pl-c1">-</span><span class="pl-c1">25.0</span>, <span class="pl-c1">0.0</span>)
+<span class="pl-s1">fluidsim</span>.<span class="pl-en">initialize</span>();
 
-The fluid simulation in this example is quick to compute, but of low quality due to the low resolution of the simulation grid. The quality of this simulation can be improved by increasing the simulation dimensions while decreasing the cell size. For example, try simulating on a grid of resolution `64 x 64 x 64` with a cell size of `0.125`, or even better, on a grid of resolution `128 x 128 x 128` with a cell size of `0.0625`.
+<span class="pl-k">for</span> <span class="pl-s1">i</span> <span class="pl-c1">in</span> <span class="pl-en">range</span>(<span class="pl-c1">30</span>):
+    <span class="pl-s1">fluidsim</span>.<span class="pl-en">update</span>(<span class="pl-c1">1.0</span> <span class="pl-c1">/</span> <span class="pl-c1">30</span>)</pre><div class="zeroclipboard-container">
 
-### Hello World (Python)
-
-The following Python script will run the equivalent simulation described in the previous section.
-
-```python
-from pyfluid import FluidSimulation
-
-fluidsim = FluidSimulation(32, 32, 32, 0.25)
-
-width, height, depth = fluidsim.get_simulation_dimensions()
-fluidsim.add_implicit_fluid_point(width / 2, height / 2, depth / 2, 6.0)
-fluidsim.add_body_force(0.0, -25.0, 0.0)
-fluidsim.initialize();
-
-for i in range(30):
-    fluidsim.update(1.0 / 30)
-```
+  </div></div>
+</article></div>
